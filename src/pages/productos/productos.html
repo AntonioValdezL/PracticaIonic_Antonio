@@ -1,0 +1,38 @@
+<!--
+  Generated template for the Productos page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Productos</ion-title>
+		
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<h1>	Lista de productos</h1>
+<div class="container">
+		<button (click)="crear()" item-right ion-button>Crear Producto</button>
+</div>
+
+	
+	<ion-list>
+		<ion-item *ngFor="let producto of productos">
+			<h2>{{producto.nombre}}</h2>
+			<p>Precio: {{producto.precio}}</p>
+			<button ion-button clear item-right>
+					<ion-icon name="trash" (click)="borrarProducto(producto.productoID)">
+					</ion-icon>
+			</button>
+			<button ion-button clear item-right >				
+					<ion-icon name='paper' (click)="editarProducto(producto.productoID)">
+					</ion-icon>
+			</button>
+		</ion-item>
+	</ion-list>
+	</ion-content>
